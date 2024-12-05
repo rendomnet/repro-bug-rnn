@@ -2,20 +2,21 @@ package com.awesomeproject
 
 import android.app.Application
 import com.facebook.react.PackageList
-import com.facebook.react.ReactApplication
+import com.reactnativenavigation.NavigationApplication
 import com.facebook.react.ReactHost
 import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
+import com.reactnativenavigation.react.NavigationReactNativeHost
 import com.facebook.react.soloader.OpenSourceMergedSoMapping
 import com.facebook.soloader.SoLoader
 
-class MainApplication : Application(), ReactApplication {
+class MainApplication : NavigationApplication() {
 
   override val reactNativeHost: ReactNativeHost =
-      object : DefaultReactNativeHost(this) {
+      object : NavigationReactNativeHost(this) {
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
               // Packages that cannot be autolinked yet can be added manually here, for example:
